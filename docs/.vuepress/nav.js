@@ -26,6 +26,76 @@ module.exports = [
                 text: 'Hadoop',
                 items: [
                     { text: 'Hadoop分布式搭建', link: '/pages/5d76a5/' },
+                    // { text: 'Hadoop高可用搭建', link: '/pages/f9f70f/' },
+                ]
+            },
+            {
+                text: 'Zookeeper',
+                items: [
+                    { text: 'Zookeeper集群搭建', link: '/pages/e2226d/' },
+                    // { text: '', link: '' },
+                ]
+            },
+            {
+                text: 'Hive',
+                items: [
+                    { text: 'Hive集群搭建', link: '/pages/edf4cb/' },
+                    // { text: '', link: '' },
+                ]
+            },
+            {
+                text: 'Kafka',
+                items: [
+                    { text: 'Kafka集群搭建', link: '/pages/bfa383/' },
+                    // { text: '', link: '' },
+                ]
+            },
+            {
+                text: 'HBase',
+                items: [
+                    { text: 'HBase集群搭建', link: '/pages/b22228/' },
+                    // { text: '', link: '' },
+                ]
+            },
+            {
+                text: 'Spark',
+                items: [
+                    { text: 'Spark环境搭建', link: '/pages/7d157d/' },
+                    // { text: '', link: '' },
+                ]
+            },
+        ]
+    },
+    {
+        text: '数据库',
+        items: [
+            {
+                text: 'Oracle',
+                items: [
+                    { text: 'Oracle相关知识杂记', link: '/pages/7e6951/' },
+                ]
+            },
+        ]
+    },
+    {
+        text: '其他',
+        items: [
+            {
+                text: 'Python',
+                items: [
+                    { text: 'Python操作Office', link: '/pages/f2a340/' },
+                ]
+            },
+            {
+                text: 'Shell',
+                items: [
+                    { text: 'Shell命令行', link: '/pages/5765cc/' },
+                ]
+            },
+            {
+                text: '正则表达式',
+                items: [
+                    { text: '正则基础', link: '/pages/e4e158/' },
                 ]
             },
         ]

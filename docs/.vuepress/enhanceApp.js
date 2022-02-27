@@ -1,7 +1,7 @@
 /**
  * to主题使用者：你可以去掉本文件的所有代码
  */
-export default ({
+/*export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
   router, // 当前应用的路由实例
@@ -54,4 +54,4 @@ function docReady(t) {
     "interactive" === document.readyState
     ? setTimeout(t, 1)
     : document.addEventListener("DOMContentLoaded", t);
-}
+}*/
