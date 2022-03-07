@@ -1,13 +1,12 @@
 module.exports = [
     { text: '首页', link: '/' },
     {
-        text: 'Java', link: '/pages/01xxxx/',
+        text: 'Java', link: '#',
         items: [
             {
                 text: '基础',
                 items: [
-                    //{ text: '基础', link: '' },
-
+                    { text: 'Java基础', link: '/pages/768c32/' },
                 ]
             },
             {
@@ -15,6 +14,12 @@ module.exports = [
                 items: [
                     { text: 'hutool', link: '/pages/1d1863/' },
                     { text: 'commons', link: '/pages/1d1864/' },
+                ]
+            },
+            {
+                text: '框架',
+                items: [
+                    { text: 'Spring Boot相关', link: '/pages/1e9420/' },
                 ]
             }
         ]
@@ -26,6 +31,9 @@ module.exports = [
                 text: 'Hadoop',
                 items: [
                     { text: 'Hadoop分布式搭建', link: '/pages/5d76a5/' },
+                    { text: 'Hadoop高可用搭建', link: '/pages/f9f70f/' },
+                    { text: '集群端口', link: '/pages/3e77b2/' },
+                    { text: '代码demo', link: '/pages/03a2bd/' },
                     // { text: 'Hadoop高可用搭建', link: '/pages/f9f70f/' },
                 ]
             },
@@ -40,6 +48,7 @@ module.exports = [
                 text: 'Hive',
                 items: [
                     { text: 'Hive集群搭建', link: '/pages/edf4cb/' },
+                    { text: 'Hive相关', link: '/pages/dd806a/' },
                     // { text: '', link: '' },
                 ]
             },
@@ -54,6 +63,7 @@ module.exports = [
                 text: 'HBase',
                 items: [
                     { text: 'HBase集群搭建', link: '/pages/b22228/' },
+                    { text: 'HBase基础学习', link: '/pages/e15afa/' },
                     // { text: '', link: '' },
                 ]
             },
@@ -61,7 +71,35 @@ module.exports = [
                 text: 'Spark',
                 items: [
                     { text: 'Spark环境搭建', link: '/pages/7d157d/' },
+                    { text: 'Spark相关知识', link: '/pages/b3ba00/' },
                     // { text: '', link: '' },
+                ]
+            },
+            {
+                text: 'Flink',
+                items: [
+                    { text: 'Flink环境搭建', link: '/pages/415096/' },
+                ]
+            },
+            {
+                text: 'Flume',
+                items: [
+                    { text: 'Flume安装配置', link: '/pages/e4166e/' },
+                    { text: 'Flume高可用集群安装', link: '/pages/0376ec/' },
+                    { text: 'Flume相关学习', link: '/pages/3408a8/' },
+                ]
+            },
+            {
+                text: 'Sqoop',
+                items: [
+                    { text: 'Sqoop安装配置', link: '/pages/60b3d7/' },
+                    { text: 'Sqoop使用', link: '/pages/40f7a3/' },
+                ]
+            },
+            {
+                text: '其他',
+                items: [
+                    { text: 'docker', link: '/pages/d89b45/' },
                 ]
             },
         ]
@@ -73,6 +111,8 @@ module.exports = [
                 text: 'Oracle',
                 items: [
                     { text: 'Oracle相关知识杂记', link: '/pages/7e6951/' },
+                    { text: '系统函数篇', link: '/pages/b5c27a/' },
+                    { text: '存储过程（函数）', link: '/pages/7f0c17/' },
                 ]
             },
         ]
@@ -93,9 +133,27 @@ module.exports = [
                 ]
             },
             {
+                text: 'Scala',
+                items: [
+                    { text: '语法学习', link: '/pages/c917bd/' },
+                ]
+            },
+            {
                 text: '正则表达式',
                 items: [
                     { text: '正则基础', link: '/pages/e4e158/' },
+                ]
+            },
+            {
+                text: '调度',
+                items: [
+                    { text: '调度工具', link: '/pages/a04438/' },
+                ]
+            },
+            {
+                text: '工具篇',
+                items: [
+                    { text: '常用工具或网站', link: '/pages/414e9c/' },
                 ]
             },
         ]
