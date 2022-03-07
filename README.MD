@@ -8,3 +8,5 @@
 [主题仓库](https://github.com/xugaoyi/vuepress-theme-vdoing)
 
 <h2>唐宋元明清</h2>
+
+<p>记录一个困扰好几天并且在网上也找不到答案的问题：yarn dev好使，yarn build报错。 前面加序号的文建必须将索引链接加入到nav目录里！！！</p>
