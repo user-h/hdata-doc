@@ -49,6 +49,7 @@ module.exports = [
                 items: [
                     { text: 'Hive集群搭建', link: '/pages/edf4cb/' },
                     { text: 'Hive相关', link: '/pages/dd806a/' },
+                    { text: 'HSQL', link: '/pages/dd807a/' },
                     // { text: '', link: '' },
                 ]
             },
@@ -123,7 +124,9 @@ module.exports = [
             {
                 text: 'Python',
                 items: [
+                    { text: 'Python简单语法', link: '/pages/f2a330/' },
                     { text: 'Python操作Office', link: '/pages/f2a340/' },
+                    { text: 'Python类库学习', link: '/pages/f2a341/' },
                 ]
             },
             {

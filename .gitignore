@@ -18,3 +18,5 @@ urls.txt
 
 # mac
 .DS_Store
+
+deploy.sh
