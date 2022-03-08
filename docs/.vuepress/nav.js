@@ -151,9 +151,15 @@ module.exports = [
                 ]
             },
             {
-                text: '工具篇',
+                text: '杂记',
                 items: [
                     { text: '常用工具或网站', link: '/pages/414e9c/' },
+                ]
+            },
+            {
+                text: '摘录',
+                items: [
+                    { text: '摘录', link: '/pages/AXI4oJ/' },
                 ]
             },
         ]
