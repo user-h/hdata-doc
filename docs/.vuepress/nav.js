@@ -157,6 +157,7 @@ module.exports = [
                 text: '杂记',
                 items: [
                     { text: '常用工具或网站', link: '/pages/414e9c/' },
+                    { text: '琐碎知识', link: '/pages/c0e729/' },
                 ]
             },
             {
