@@ -80,6 +80,7 @@ module.exports = [
                 text: 'Flink',
                 items: [
                     { text: 'Flink环境搭建', link: '/pages/415096/' },
+                    { text: 'Flink学习', link: '/pages/415097/' },
                 ]
             },
             {
