@@ -133,6 +133,7 @@ module.exports = [
             {
                 text: 'Shell',
                 items: [
+                    { text: 'Shell基础', link: '/pages/5704cc/' },
                     { text: 'Shell命令行', link: '/pages/5765cc/' },
                 ]
             },
@@ -152,6 +153,12 @@ module.exports = [
                 text: '调度',
                 items: [
                     { text: '调度工具', link: '/pages/a04438/' },
+                ]
+            },
+            {
+                text: '前端',
+                items: [
+                    { text: '前端相关', link: '/pages/gxfmrs/' },
                 ]
             },
             {
