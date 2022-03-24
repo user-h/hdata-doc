@@ -8,7 +8,7 @@ module.exports = {
   // theme: require.resolve('../../vdoing'), // 使用本地主题
 
   title: "唐宋元明清",
-  description: '个人知识管理',
+  descriptimarkdownon: '个人知识管理',
   base: '/hdata-doc/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
@@ -19,6 +19,11 @@ module.exports = {
     //['script', { src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript' }], // 广告相关，你可以去掉
   ],
 
+  // 支持多级标题 类型: Array  默认值: ['h2', 'h3']
+  markdown: {
+    extractHeaders: [ 'h2', 'h3', 'h4', 'h5'/*, 'h6'*/ ]
+  },
+
   // 主题配置
   themeConfig: {
     nav: require("./nav"),
@@ -28,8 +33,8 @@ module.exports = {
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
-    docsDir: 'docs', // 编辑的文件夹match
-    editLinks: true, // 编辑链接
+    docsDir: 'docs', // 编辑的文件夹match  .md文件放在了docs目录下
+    editLinks: true, // 启用编辑链接
     editLinkText: '编辑',
 
     // 以下配置是Vdoing主题改动的和新增的配置
