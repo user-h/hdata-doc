@@ -117,6 +117,12 @@ module.exports = [
                     { text: '存储过程（函数）', link: '/pages/bc0347/' },
                 ]
             },
+            {
+                text: 'MySQL',
+                items: [
+                    { text: 'MySQL知识点', link: '/pages/36476d/' },
+                ]
+            },
         ]
     },
     {
