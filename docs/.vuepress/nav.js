@@ -107,7 +107,7 @@ module.exports = [
         ]
     },
     {
-        text: '数据库',
+        text: '数据库', link: '/pages/d5b8e9/',
         items: [
             {
                 text: 'Oracle',
