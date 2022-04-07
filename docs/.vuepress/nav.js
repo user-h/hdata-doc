@@ -114,7 +114,7 @@ module.exports = [
                 items: [
                     { text: 'Oracle相关知识杂记', link: '/pages/7e6951/' },
                     { text: '系统函数篇', link: '/pages/b5c27a/' },
-                    { text: '存储过程（函数）', link: '/pages/bc0347/' },
+                    { text: '与MySQL语法区别', link: '/pages/c2df29/' },
                 ]
             },
             {

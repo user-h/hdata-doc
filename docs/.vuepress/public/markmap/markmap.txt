@@ -1,0 +1,42 @@
+
+```markmap
+# Root
+
+## Java
+
+### 基础
+### 工具
+
+- [Hutool](https://www.hutool.cn/)
+- <em>Apache Commons<em>
+
+### 框架
+
+## 大数据
+
+### Hadoop
+### Zookeeper
+### Hive
+### Kafka
+### Hbase
+### Spark
+### Flink
+### Flume
+### Sqoop
+### 调度
+### 其他
+
+## 数据库
+
+### Oracle
+### Mysql
+### Redis
+
+## 其他
+
+### Python
+### Shell
+### Scala
+### 正则表达式
+### 前端
+```
