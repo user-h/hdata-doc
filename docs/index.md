@@ -37,7 +37,9 @@ postList: none
 
 ## 目录视图
 
+```html
 <iframe :src="$withBase('/markmap/markmap.html')" width="100%" height="400" frameborder="0" scrolling="No" leftmargin="0" topmargin="0"></iframe>
+```
 
 
 <br/>
