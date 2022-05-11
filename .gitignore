@@ -13,6 +13,9 @@ yarn.lock
 # vuepress
 docs/.vuepress/dist/
 docs/.vuepress/public/img/bak/
+docs/@Files/文档/.obsidian/
+docs/@Files/文档/未整理/
+docs/@Files/文档/PDF资料/
 
 # 百度链接推送
 urls.txt
@@ -21,4 +24,5 @@ urls.txt
 .DS_Store
 
 deploy.sh
+
 
