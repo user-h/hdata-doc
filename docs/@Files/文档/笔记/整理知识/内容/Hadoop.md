@@ -1,3 +1,16 @@
+---
+title: Hadoop
+date: 2022-05-12 17:13:44
+permalink: /pages/17dfea/
+categories:
+  - @Files
+  - 文档
+  - 笔记
+  - 整理知识
+  - 内容
+tags:
+  - 
+---
 ## 面试八股文
 
 ### 0、Hadoop整体架构

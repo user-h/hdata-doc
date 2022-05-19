@@ -1,3 +1,15 @@
+---
+title: SQL题目
+date: 2022-05-19 09:15:26
+permalink: /pages/de2ee7/
+categories:
+  - @Files
+  - 文档
+  - 笔记
+  - SQL
+tags:
+  - 
+---
 ## 力扣
 
 [跳转链接](https://leetcode.cn/problemset/database/?page=1)
