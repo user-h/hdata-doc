@@ -1,3 +1,16 @@
+---
+title: HBase
+date: 2022-05-12 17:13:44
+permalink: /pages/9113b7/
+categories:
+  - @Files
+  - 文档
+  - 笔记
+  - 整理知识
+  - 内容
+tags:
+  - 
+---
 #### 1. Hbase是怎么写数据的？
 
 Client写入 -> 存入MemStore，一直到MemStore满 -> Flush成一个StoreFile，直至增长到一定阈值 -> 触发Compact合并操作 -> 多个StoreFile合并成一个StoreFile，同时进行版本合并和数据删除 -> 当StoreFiles Compact后，逐步形成越来越大的StoreFile -> 单个StoreFile大小超过一定阈值后（默认10G），触发Split操作，把当前Region Split成2个Region，Region会下线，新Split出的2个孩子Region会被HMaster分配到相应的HRegionServer 上，使得原先1个Region的压力得以分流到2个Region上

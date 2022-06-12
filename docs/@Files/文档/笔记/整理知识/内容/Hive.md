@@ -1,3 +1,16 @@
+---
+title: Hive
+date: 2022-05-12 17:13:44
+permalink: /pages/f29ad6/
+categories:
+  - @Files
+  - 文档
+  - 笔记
+  - 整理知识
+  - 内容
+tags:
+  - 
+---
 ### 1. Hive内部表和外部表的区别
 
 未被external修饰的是内部表，被external修饰的为外部表。
