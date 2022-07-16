@@ -21,7 +21,7 @@ module.exports = {
 
   // 支持多级标题 类型: Array  默认值: ['h2', 'h3']
   markdown: {
-    extractHeaders: [ 'h2', 'h3', 'h4', 'h5'/*, 'h6'*/ ]
+    extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ]
   },
 
   // 主题配置
