@@ -50,22 +50,22 @@ postList: none
 ```yaml
 - name: Java
   desc: Java相关的知识点
-  link: /hdata-doc/pages/768c32/
+  link: /pages/768c32/
   bgColor: '#f1f1f1'
   textColor: '#2A3344'
 - name: 大数据
   desc: 🚀大数据相关组件的搭建（注意版本）及基本用法
-  link: /hdata-doc/pages/5d76a5/
+  link: /pages/5d76a5/
   bgColor: '#f1f1f1'
   textColor: '#2A3344'
 - name: 数据库
   desc: 数据库的相关知识点
-  link: /hdata-doc/pages/7e6951/
+  link: /pages/7e6951/
   bgColor: '#f1f1f1'
   textColor: '#2A3344'
 - name: 其他
   desc: 其他编程语言及杂记
-  link: /hdata-doc/pages/f2a340/
+  link: /pages/f2a340/
   bgColor: '#f1f1f1'
   textColor: '#2A3344'
 ```
