@@ -22,6 +22,13 @@ postList: none
   <a class="become-sponsor" href="#">balabalabala</a>
 </p>
 
+<div class="sentences">
+    <div class="my_title">黑神话 · 悟空</div>
+    <div class="my_text">别有世间曾未见，一行一步，一花新。</div>
+    <div class="my_text">愿你历经九九八十一难，归来仍是那只石头憨憨。</div>
+    <div class="my_text">黑夜给了我火眼金睛， 我要用它，看穿宿命。</div>
+</div>
+
 <style>
 .become-sponsor{
   padding: 8px 20px;
@@ -30,6 +37,25 @@ postList: none
   border-radius: 30px;
   box-sizing: border-box;
   border: 1px solid #11a8cd;
+}
+.sentences{
+    background-color:#f1f1f1;
+    margin: 1rem 0;
+    padding: 0.5rem 1.5rem 3rem 1.5rem;
+    border-radius: 2px;
+}
+.sentences > .my_text {
+    font-family: 华文行楷,cursive; 
+    font-size: 1.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    text-align: center;
+}
+.sentences > .my_title {
+    text-align: left;
+    padding-bottom: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
 }
 </style>
 
