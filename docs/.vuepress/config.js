@@ -75,7 +75,7 @@ module.exports = {
         {
           iconClass: 'icon-youjian',
           title: '发邮件',
-          link: 'mailto:1714686225@qq.com'
+          link: 'mailto:1033078928@qq.com'
         },
         {
           iconClass: 'icon-github',
@@ -83,9 +83,29 @@ module.exports = {
           link: 'https://github.com/user-h'
         },
         {
+          iconClass: 'icon-gitee',
+          title: 'Gitee',
+          link: 'https://gitee.com/aihb'
+        },
+        {
           iconClass: 'icon-erji',
           title: '听音乐',
-          link: 'https://music.163.com/#/playlist?id=755597173'
+          link: 'https://music.163.com'
+        },
+        {
+          iconClass: 'icon-bilibili',
+          title: '哔哩哔哩',
+          link: 'https://bilibili.com'
+        },
+        {
+          iconClass: 'icon-douyin',
+          title: '抖音',
+          link: 'https://douyin.com/'
+        },
+        {
+          iconClass: 'icon-mao',
+          title: '猫咪',
+          link: ''
         }
       ]
     },
