@@ -21,6 +21,12 @@ module.exports = [
                 items: [
                     { text: 'Spring Boot相关', link: '/pages/1e9420/' },
                 ]
+            },
+            {
+                text: '设计模式',
+                items: [
+                    { text: '设计模式入门', link: '/pages/bdceb5/' },
+                ]
             }
         ]
     },
@@ -134,6 +140,7 @@ module.exports = [
                     { text: 'Python简单语法', link: '/pages/f2a330/' },
                     { text: 'Python操作Office', link: '/pages/f2a340/' },
                     { text: 'Python类库学习', link: '/pages/f2a341/' },
+                    { text: 'Python爬虫', link: '/pages/f799c7/' },
                 ]
             },
             {

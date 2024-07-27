@@ -1,0 +1,89 @@
+## Impala
+
+### Impala 语句
+
+#### Impala 基础语句
+
+与 Hive 基本通用，包括建表语句、动态分区等  
+
+```sql
+-- 查看建表语句
+SHOW CREATE TABLE table_name;
+
+-- 分区信息
+show partitions table_name;
+
+-- 查看表详细信息
+describe extended table_name;
+DESCRIBE FORMATTED table_name;
+
+-- 删除分区
+alter table table_name drop partition (ny='201901');
+```
+
+#### Impala 统计信息
+
+[官网链接：impala统计信息](https://impala.apache.org/docs/build/html/topics/impala_compute_stats.html)  
+
+```sql
+-- 查看表统计信息
+show table[COLUMN] stats table_name;
+
+-- 收集统计信息（不能对同一个表执行两种统计信息收集，若要混用，需先删除统计信息，重新收集）
+COMPUTE STATS table_name;  -- 全表统计信息计算（不带分区的表）
+COMPUTE INCREMENTAL STATS table_name;  -- 全表统计信息计算（带分区的表，若表实际未分区则实际执行 COMPUTE STATS）
+COMPUTE INCREMENTAL STATS table_name PARTITION(year=2009, month>1);  -- 分区统计信息计算
+
+-- 删除表统计信息
+DROP STATS table_name;
+```
+
+#### Impala 元数据
+
+
+[加载元数据参数](https://impala.apache.org/docs/build/html/topics/impala_config_options.html)  
+
+```sql
+-- 直接把元数据重置回未加载状态，下次使用时重新加载
+INVALIDATE METADATA table_name;
+
+-- 让 Impala 增量更新指定表的元数据
+REFRESH table_name;
+
+-- 让 impala 感知到在 Hive 创建的函数
+REFRESH FUNCTIONS db_name;
+
+-- 启动参数：控制 Impala 在何时进行 metadata 的 load（为 true 时在后台自动加载元数据：缺点是元数据常驻内存，比较占用内存，优点是不用在查询时加载元数据）
+load_catalog_in_background = true;
+```
+
+#### Impala-Shell 传入参数
+
+```shell
+# impala 执行 SQL 文件中语句，可传入参数
+ny=`date -d "$(date +%Y-%m-01) -1 month" +%Y%m`
+impala-shell --var=NY=${ny} -f impala_insert.sql
+```
+
+### Impala 执行计划
+
+#### explain（执行前）
+
+1. 使用 explain 语句生成的执行计划，实际并未执行 sql 语句（根据统计信息生成，统计信息准确与否会生成不同的执行计划，尤其影响带关联的 SQL 执行效率）  
+2. 预计使用内存情况、是否缺少表统计信息（）、扫描分区数、扫描文件数、扫描文件大小、关联方式（广播小表、混洗哈希）、排序等信息  
+
+#### Summary（执行后）
+
+1. 执行后生成  
+2. 可以看到每个步骤资源使用情况，比如：  
+   - 使用了几个节点  
+   - 计划读取大小和实际读取文件大小  
+   - 计划读取行数（为 -1 时缺乏表统计信息）和实际读取行数  
+   - 平均时间和最大时间：若有一个节点耗时比较长，说明可能出现数据倾斜或节点资源不足等情况  
+
+#### Profile（执行后-更详细）
+
+1. 执行后生成，包含 Expalin、Summary 等信息且更详细  
+2. Query Compilation 为编译阶段耗时，Query Timeline 为查询阶段耗时
+3. 查看各个节点的详细信息：使用字符串“id=0”来搜索Profile文件，“0”是Summary部分“00:SCAN HDFS”中每一行开头的操作编号。
+
