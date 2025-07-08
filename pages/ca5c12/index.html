@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis命令学习 | 唐宋元明清</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/hdata-doc/img/favicon.ico">
+    <meta name="description" content="">
+    <meta name="keywords" content="vuepress,theme,blog,vdoing">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/hdata-doc/assets/css/0.styles.ce16c74b.css" as="style"><link rel="preload" href="/hdata-doc/assets/js/app.37e4fbb6.js" as="script"><link rel="preload" href="/hdata-doc/assets/js/2.82afd9cb.js" as="script"><link rel="preload" href="/hdata-doc/assets/js/60.2afcb1b9.js" as="script"><link rel="prefetch" href="/hdata-doc/assets/js/10.7b061388.js"><link rel="prefetch" href="/hdata-doc/assets/js/11.3d84b622.js"><link rel="prefetch" href="/hdata-doc/assets/js/12.f524e450.js"><link rel="prefetch" href="/hdata-doc/assets/js/13.b3ff7d26.js"><link rel="prefetch" href="/hdata-doc/assets/js/14.3675e190.js"><link rel="prefetch" href="/hdata-doc/assets/js/15.676eac9f.js"><link rel="prefetch" href="/hdata-doc/assets/js/16.c546644f.js"><link rel="prefetch" href="/hdata-doc/assets/js/17.d80c3241.js"><link rel="prefetch" href="/hdata-doc/assets/js/18.bfa024db.js"><link rel="prefetch" href="/hdata-doc/assets/js/19.c4ebe893.js"><link rel="prefetch" href="/hdata-doc/assets/js/20.0c06c705.js"><link rel="prefetch" href="/hdata-doc/assets/js/21.e586d4fc.js"><link rel="prefetch" href="/hdata-doc/assets/js/22.d4747bce.js"><link rel="prefetch" href="/hdata-doc/assets/js/23.cfa91ca4.js"><link rel="prefetch" href="/hdata-doc/assets/js/24.77c960d1.js"><link rel="prefetch" href="/hdata-doc/assets/js/25.cc923a02.js"><link rel="prefetch" href="/hdata-doc/assets/js/26.432e9cf4.js"><link rel="prefetch" href="/hdata-doc/assets/js/27.3248ab2a.js"><link rel="prefetch" href="/hdata-doc/assets/js/28.67efb541.js"><link rel="prefetch" href="/hdata-doc/assets/js/29.e500a45f.js"><link rel="prefetch" href="/hdata-doc/assets/js/3.5c0f818a.js"><link rel="prefetch" href="/hdata-doc/assets/js/30.27916467.js"><link rel="prefetch" href="/hdata-doc/assets/js/31.db03022b.js"><link rel="prefetch" href="/hdata-doc/assets/js/32.40451343.js"><link rel="prefetch" href="/hdata-doc/assets/js/33.57a8afa5.js"><link rel="prefetch" href="/hdata-doc/assets/js/34.e8da6dc5.js"><link rel="prefetch" href="/hdata-doc/assets/js/35.25dea1e4.js"><link rel="prefetch" href="/hdata-doc/assets/js/36.ecc28683.js"><link rel="prefetch" href="/hdata-doc/assets/js/37.976e826a.js"><link rel="prefetch" href="/hdata-doc/assets/js/38.f1f7e891.js"><link rel="prefetch" href="/hdata-doc/assets/js/39.6daaca2d.js"><link rel="prefetch" href="/hdata-doc/assets/js/4.528973e8.js"><link rel="prefetch" href="/hdata-doc/assets/js/40.3766a207.js"><link rel="prefetch" href="/hdata-doc/assets/js/41.515be286.js"><link rel="prefetch" href="/hdata-doc/assets/js/42.87e45d55.js"><link rel="prefetch" href="/hdata-doc/assets/js/43.0eea2c15.js"><link rel="prefetch" href="/hdata-doc/assets/js/44.f5a1989e.js"><link rel="prefetch" href="/hdata-doc/assets/js/45.96eaa743.js"><link rel="prefetch" href="/hdata-doc/assets/js/46.6db88dae.js"><link rel="prefetch" href="/hdata-doc/assets/js/47.f3e98870.js"><link rel="prefetch" href="/hdata-doc/assets/js/48.138b9428.js"><link rel="prefetch" href="/hdata-doc/assets/js/49.b4e2bdb7.js"><link rel="prefetch" href="/hdata-doc/assets/js/5.53dd3ef1.js"><link rel="prefetch" href="/hdata-doc/assets/js/50.6624a71f.js"><link rel="prefetch" href="/hdata-doc/assets/js/51.4273468b.js"><link rel="prefetch" href="/hdata-doc/assets/js/52.d69c448e.js"><link rel="prefetch" href="/hdata-doc/assets/js/53.3e61789b.js"><link rel="prefetch" href="/hdata-doc/assets/js/54.ed81b599.js"><link rel="prefetch" href="/hdata-doc/assets/js/55.a2edf6d0.js"><link rel="prefetch" href="/hdata-doc/assets/js/56.324986ae.js"><link rel="prefetch" href="/hdata-doc/assets/js/57.640caf90.js"><link rel="prefetch" href="/hdata-doc/assets/js/58.344d4730.js"><link rel="prefetch" href="/hdata-doc/assets/js/59.d9078674.js"><link rel="prefetch" href="/hdata-doc/assets/js/6.22885e2c.js"><link rel="prefetch" href="/hdata-doc/assets/js/61.996c28ca.js"><link rel="prefetch" href="/hdata-doc/assets/js/62.cb5e8bee.js"><link rel="prefetch" href="/hdata-doc/assets/js/63.146ed62c.js"><link rel="prefetch" href="/hdata-doc/assets/js/64.8bb9c50a.js"><link rel="prefetch" href="/hdata-doc/assets/js/65.460effd7.js"><link rel="prefetch" href="/hdata-doc/assets/js/66.f5294e94.js"><link rel="prefetch" href="/hdata-doc/assets/js/67.0da1dddd.js"><link rel="prefetch" href="/hdata-doc/assets/js/68.64117a5a.js"><link rel="prefetch" href="/hdata-doc/assets/js/69.ed33359f.js"><link rel="prefetch" href="/hdata-doc/assets/js/7.814d9e01.js"><link rel="prefetch" href="/hdata-doc/assets/js/70.1250ab19.js"><link rel="prefetch" href="/hdata-doc/assets/js/71.f6a79a2a.js"><link rel="prefetch" href="/hdata-doc/assets/js/72.683057b4.js"><link rel="prefetch" href="/hdata-doc/assets/js/73.94e5450b.js"><link rel="prefetch" href="/hdata-doc/assets/js/74.fa587d94.js"><link rel="prefetch" href="/hdata-doc/assets/js/75.48871ae9.js"><link rel="prefetch" href="/hdata-doc/assets/js/76.447894b5.js"><link rel="prefetch" href="/hdata-doc/assets/js/77.da5dadf2.js"><link rel="prefetch" href="/hdata-doc/assets/js/78.a8553a08.js"><link rel="prefetch" href="/hdata-doc/assets/js/79.bd712952.js"><link rel="prefetch" href="/hdata-doc/assets/js/8.a242d330.js"><link rel="prefetch" href="/hdata-doc/assets/js/9.c7938acd.js">
+    <link rel="stylesheet" href="/hdata-doc/assets/css/0.styles.ce16c74b.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/hdata-doc/" class="home-link router-link-active"><img src="https://i.postimg.cc/2yr3430s/panda.jpg" alt="唐宋元明清" class="logo"> <span class="site-name can-hide">唐宋元明清</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/hdata-doc/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/hdata-doc/pages/de9b5e/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/768c32/" class="nav-link">Java基础</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/1d1863/" class="nav-link">hutool</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/1d1864/" class="nav-link">commons</a></li></ul></li><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/1e9420/" class="nav-link">Spring Boot相关</a></li></ul></li><li class="dropdown-item"><h4>设计模式</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/bdceb5/" class="nav-link">设计模式入门</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><!----> <span class="title" style="display:;">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Hadoop</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/5d76a5/" class="nav-link">Hadoop分布式搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f9f70f/" class="nav-link">Hadoop高可用搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/3e77b2/" class="nav-link">集群端口</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/03a2bd/" class="nav-link">代码demo</a></li></ul></li><li class="dropdown-item"><h4>Zookeeper</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e2226d/" class="nav-link">Zookeeper集群搭建</a></li></ul></li><li class="dropdown-item"><h4>Hive</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/edf4cb/" class="nav-link">Hive集群搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/dd806a/" class="nav-link">Hive相关</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/dd807a/" class="nav-link">HSQL</a></li></ul></li><li class="dropdown-item"><h4>Kafka</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/bfa383/" class="nav-link">Kafka集群搭建</a></li></ul></li><li class="dropdown-item"><h4>HBase</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/b22228/" class="nav-link">HBase集群搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/e15afa/" class="nav-link">HBase基础学习</a></li></ul></li><li class="dropdown-item"><h4>Spark</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/7d157d/" class="nav-link">Spark环境搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/b3ba00/" class="nav-link">Spark相关知识</a></li></ul></li><li class="dropdown-item"><h4>Flink</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/415096/" class="nav-link">Flink环境搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/415097/" class="nav-link">Flink学习</a></li></ul></li><li class="dropdown-item"><h4>Flume</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e4166e/" class="nav-link">Flume安装配置</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/0376ec/" class="nav-link">Flume高可用集群安装</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/3408a8/" class="nav-link">Flume相关学习</a></li></ul></li><li class="dropdown-item"><h4>Sqoop</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/60b3d7/" class="nav-link">Sqoop安装配置</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/40f7a3/" class="nav-link">Sqoop使用</a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/d89b45/" class="nav-link">docker</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><a href="/hdata-doc/pages/e0cc49/" class="link-title">数据库</a> <span class="title" style="display:none;">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Oracle</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/7e6951/" class="nav-link">Oracle相关知识杂记</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/b5c27a/" class="nav-link">系统函数篇</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/c2df29/" class="nav-link">与MySQL语法区别</a></li></ul></li><li class="dropdown-item"><h4>MySQL</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/36476d/" class="nav-link">MySQL知识点</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><!----> <span class="title" style="display:;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Python</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a330/" class="nav-link">Python简单语法</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a340/" class="nav-link">Python操作Office</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a341/" class="nav-link">Python类库学习</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f799c7/" class="nav-link">Python爬虫</a></li></ul></li><li class="dropdown-item"><h4>Shell</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/5704cc/" class="nav-link">Shell基础</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/5765cc/" class="nav-link">Shell命令行</a></li></ul></li><li class="dropdown-item"><h4>Scala</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/c917bd/" class="nav-link">语法学习</a></li></ul></li><li class="dropdown-item"><h4>正则表达式</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e4e158/" class="nav-link">正则基础</a></li></ul></li><li class="dropdown-item"><h4>调度</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/a04438/" class="nav-link">调度工具</a></li></ul></li><li class="dropdown-item"><h4>前端</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/gxfmrs/" class="nav-link">前端相关</a></li></ul></li><li class="dropdown-item"><h4>杂记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/414e9c/" class="nav-link">常用工具或网站</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/c0e729/" class="nav-link">琐碎知识</a></li></ul></li><li class="dropdown-item"><h4>摘录</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/AXI4oJ/" class="nav-link">摘录</a></li></ul></li></ul></div></div> <a href="https://github.com/user-h/hdata-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/hdata-doc/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/hdata-doc/pages/de9b5e/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/768c32/" class="nav-link">Java基础</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/1d1863/" class="nav-link">hutool</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/1d1864/" class="nav-link">commons</a></li></ul></li><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/1e9420/" class="nav-link">Spring Boot相关</a></li></ul></li><li class="dropdown-item"><h4>设计模式</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/bdceb5/" class="nav-link">设计模式入门</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><!----> <span class="title" style="display:;">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Hadoop</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/5d76a5/" class="nav-link">Hadoop分布式搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f9f70f/" class="nav-link">Hadoop高可用搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/3e77b2/" class="nav-link">集群端口</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/03a2bd/" class="nav-link">代码demo</a></li></ul></li><li class="dropdown-item"><h4>Zookeeper</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e2226d/" class="nav-link">Zookeeper集群搭建</a></li></ul></li><li class="dropdown-item"><h4>Hive</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/edf4cb/" class="nav-link">Hive集群搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/dd806a/" class="nav-link">Hive相关</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/dd807a/" class="nav-link">HSQL</a></li></ul></li><li class="dropdown-item"><h4>Kafka</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/bfa383/" class="nav-link">Kafka集群搭建</a></li></ul></li><li class="dropdown-item"><h4>HBase</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/b22228/" class="nav-link">HBase集群搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/e15afa/" class="nav-link">HBase基础学习</a></li></ul></li><li class="dropdown-item"><h4>Spark</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/7d157d/" class="nav-link">Spark环境搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/b3ba00/" class="nav-link">Spark相关知识</a></li></ul></li><li class="dropdown-item"><h4>Flink</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/415096/" class="nav-link">Flink环境搭建</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/415097/" class="nav-link">Flink学习</a></li></ul></li><li class="dropdown-item"><h4>Flume</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e4166e/" class="nav-link">Flume安装配置</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/0376ec/" class="nav-link">Flume高可用集群安装</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/3408a8/" class="nav-link">Flume相关学习</a></li></ul></li><li class="dropdown-item"><h4>Sqoop</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/60b3d7/" class="nav-link">Sqoop安装配置</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/40f7a3/" class="nav-link">Sqoop使用</a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/d89b45/" class="nav-link">docker</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><a href="/hdata-doc/pages/e0cc49/" class="link-title">数据库</a> <span class="title" style="display:none;">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Oracle</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/7e6951/" class="nav-link">Oracle相关知识杂记</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/b5c27a/" class="nav-link">系统函数篇</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/c2df29/" class="nav-link">与MySQL语法区别</a></li></ul></li><li class="dropdown-item"><h4>MySQL</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/36476d/" class="nav-link">MySQL知识点</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><!----> <span class="title" style="display:;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Python</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a330/" class="nav-link">Python简单语法</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a340/" class="nav-link">Python操作Office</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f2a341/" class="nav-link">Python类库学习</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/f799c7/" class="nav-link">Python爬虫</a></li></ul></li><li class="dropdown-item"><h4>Shell</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/5704cc/" class="nav-link">Shell基础</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/5765cc/" class="nav-link">Shell命令行</a></li></ul></li><li class="dropdown-item"><h4>Scala</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/c917bd/" class="nav-link">语法学习</a></li></ul></li><li class="dropdown-item"><h4>正则表达式</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/e4e158/" class="nav-link">正则基础</a></li></ul></li><li class="dropdown-item"><h4>调度</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/a04438/" class="nav-link">调度工具</a></li></ul></li><li class="dropdown-item"><h4>前端</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/gxfmrs/" class="nav-link">前端相关</a></li></ul></li><li class="dropdown-item"><h4>杂记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/414e9c/" class="nav-link">常用工具或网站</a></li><li class="dropdown-subitem"><a href="/hdata-doc/pages/c0e729/" class="nav-link">琐碎知识</a></li></ul></li><li class="dropdown-item"><h4>摘录</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/hdata-doc/pages/AXI4oJ/" class="nav-link">摘录</a></li></ul></li></ul></div></div> <a href="https://github.com/user-h/hdata-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Oracle</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hdata-doc/pages/7e6951/" class="sidebar-link">Oracle相关知识杂记</a></li><li><a href="/hdata-doc/pages/b5c27a/" class="sidebar-link">系统函数篇</a></li><li><a href="/hdata-doc/pages/c2df29/" class="sidebar-link">与MySQL语法区别</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>MySQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hdata-doc/pages/36476d/" class="sidebar-link">MySQL琐碎知识点</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>国产数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hdata-doc/pages/086761/" class="sidebar-link">达梦数据库</a></li><li><a href="/hdata-doc/pages/e461e3/" class="sidebar-link">华为高斯数据库</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Redis</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hdata-doc/pages/ca5c12/" aria-current="page" class="active sidebar-link">Redis命令学习</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/hdata-doc/pages/ca5c12/#进入客户端" class="sidebar-link">进入客户端</a></li><li class="sidebar-sub-header level2"><a href="/hdata-doc/pages/ca5c12/#_1-数据类型" class="sidebar-link">1.数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_1-string-字符串" class="sidebar-link">（1）String(字符串)</a></li><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_2-hash-哈希" class="sidebar-link">（2）Hash(哈希)</a></li><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_3-list-列表" class="sidebar-link">（3）List(列表)</a></li><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_4-set-集合" class="sidebar-link">（4）Set(集合)</a></li><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_5-zset-sorted-set-有序集合" class="sidebar-link">（5）Zset(sorted set：有序集合)</a></li><li class="sidebar-sub-header level3"><a href="/hdata-doc/pages/ca5c12/#_6-代码练习" class="sidebar-link">（6） 代码练习</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Excel</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hdata-doc/pages/265b1a/" class="sidebar-link">Excel技巧</a></li></ul></section></li><li><a href="/hdata-doc/pages/e0cc49/" class="sidebar-link">数据库</a></li><li><a href="/hdata-doc/pages/e02b49/" class="sidebar-link">SQL非常规用法</a></li><li><a href="/hdata-doc/pages/d5b8e9/" class="sidebar-link">SQL练习题</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/hdata-doc/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><span data-v-06225672>数据库</span></li><li data-v-06225672><span data-v-06225672>Redis</span></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/user-h" target="_blank" title="作者" class="beLink" data-v-06225672>Ai</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-03-10</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">Redis命令学习<!----></h1>  <div class="theme-vdoing-content content__default"><h2 id="进入客户端"><a href="#进入客户端" class="header-anchor">#</a> 进入客户端</h2> <p>启动： <code>redis-server redis.conf</code></p> <p>客户端： <code>redis-cli</code></p> <p>查看端口占用： <code>netstat -tunpl|grep 6379</code></p> <p>退出客户端： <code>exit</code></p> <h2 id="_1-数据类型"><a href="#_1-数据类型" class="header-anchor">#</a> 1.数据类型</h2> <h3 id="_1-string-字符串"><a href="#_1-string-字符串" class="header-anchor">#</a> （1）String(字符串)</h3> <div class="language- extra-class"><pre class="language-text"><code>set xxx aaa     //设置xxx
+get xxx     //获取xxx
+del xxx     //删除xxx
+mset name1 111 name2 222 name3 333 name4 444    //设置多个
+mget name1 name2 name3    //查看多个
+exists xxx     //查看是否存在
+type aaa      //查看value的数据类型
+randomkey     //从当前库中随机返回一个key
+FLUSHdb     //清空数据 
+FLUSHALL     //清空所有
+</code></pre></div><h3 id="_2-hash-哈希"><a href="#_2-hash-哈希" class="header-anchor">#</a> （2）Hash(哈希)</h3> <div class="language- extra-class"><pre class="language-text"><code>赋值：
+HSET KEY  FIELD  VALUE    //为指定的KEY，设定FIELD/VALUE  
+HMSET  KEY  FIELD VALUE [FIELD1,VALUE1]…… 同时将多个 field-value (域-值)对设置到哈希表 key 中。
+
+取值：
+HGET KEY FIELD   //获取存储在HASH中的值，根据FIELD得到VALUE
+HMGET key field[field1]      //获取key所有给定字段的值
+HGETALL key                 //返回HASH表中所有的字段和值
+HKEYS key   //获取所有哈希表中的字段
+HVALS key   //获取所有哈希表中的值
+HLEN key   //获取哈希表中字段的数量
+
+删除语法：
+HDEL KEY field1[field2]    //删除一个或多个HASH表字段
+</code></pre></div><h3 id="_3-list-列表"><a href="#_3-list-列表" class="header-anchor">#</a> （3）List(列表)</h3> <div class="language- extra-class"><pre class="language-text"><code>LPUSH key value1 [value2]     // 将一个或多个值插入到列表头部
+RPUSH key value1 [value2]    // 在列表中添加一个或多个值
+BLPOP key1 [key2 ] timeout    // 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。
+BRPOP key1 [key2 ] timeout    // 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。
+LINSERT key BEFORE|AFTER pivot value    // 在列表的元素前或者后插入元素
+LINDEX key index    // 通过索引获取列表中的元素
+LLEN key     // 获取列表长度
+LRANGE key start stop    //获取列表指定范围内的元素
+</code></pre></div><h3 id="_4-set-集合"><a href="#_4-set-集合" class="header-anchor">#</a> （4）Set(集合)</h3> <div class="language- extra-class"><pre class="language-text"><code>SADD key member1 [member2]    // 向集合添加一个或多个成员
+SMEMBERS key    // 返回集合中的所有成员
+SISMEMBER key member    // 1表示存在，0表示不存在或该key本身就不存在（无论集合中有多少元素都可以极速地返回结果）
+SREM key member1 [member2]    // 移除集合中一个或多个成员
+SINTER key1 [key2]      //返回给定所有集合的交集
+SDIFF key1 [key2]     // 返回给定所有集合的差集（属于key1不属于key2的集合）
+SUNION key1 [key2]     // 返回所有给定集合的并集
+SCARD key    //获取集合中成员的数量
+sdiffstore destination key1 [key2]    // 将key1、key2相差的成员存储在destination中
+sinterstore destination key1 [key2]     //将返回的交集存储在destination中
+sunionstore destination key1 [key2]     //将返回的并集存储在destination中
+</code></pre></div><h3 id="_5-zset-sorted-set-有序集合"><a href="#_5-zset-sorted-set-有序集合" class="header-anchor">#</a> （5）Zset(sorted set：有序集合)</h3> <div class="language- extra-class"><pre class="language-text"><code>ZADD key score1 member1 [score2 member2]    // 向有序集合添加一个或多个成员，或者更新已存在成员的分数
+ZRANGE key start stop [WITHSCORES]     // 通过索引区间返回有序集合指定区间内的成员
+ZCOUNT key min max    // 计算在有序集合中指定区间分数的成员数
+ZREM key member [member ...]    // 移除有序集合中的一个或多个成员
+ZCARD key    // 获取有序集合的成员数
+ZINCRBY key increment member    // 有序集合中对指定成员的分数加上增量 increment 
+ZSCORE key member    // 返回有序集中，成员的分数值
+ZRANK key member    // 返回有序集合中指定成员的索引
+ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT]    // 通过分数返回有序集合指定区间内的成员
+ZINTERSTORE destination numkeys key [key ...]    //计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中
+ZUNIONSTORE destination numkeys key [key ...]    //计算给定的一个或多个有序集的并集，并存储在新的 key 中
+
+</code></pre></div><h3 id="_6-代码练习"><a href="#_6-代码练习" class="header-anchor">#</a> （6） 代码练习</h3> <div class="language- extra-class"><pre class="language-text"><code>public class App 
+{
+    public static void main( String[] args )
+    {
+    	Jedis jedis = new Jedis(&quot;8.8.8.8&quot;,6379);
+    	//jedis.flushAll();
+        //System.out.println( &quot;Hello World!&quot; + jedis.ping());
+        /*****1.字符串(String)*****/
+//    	jedis.set(&quot;name1&quot;, &quot;aaa&quot;);
+//        System.out.println(jedis.get(&quot;name1&quot;));
+//    	jedis.del(&quot;name1&quot;);
+//    	
+//    	jedis.mset(&quot;name1&quot;,&quot;aaa&quot;,&quot;name2&quot;,&quot;bbb&quot;,&quot;name3&quot;,&quot;ccc&quot;);
+//    	System.out.println(jedis.mget(&quot;name1&quot;,&quot;name2&quot;,&quot;name3&quot;));
+//    	
+//    	System.out.println(jedis.exists(&quot;name1&quot;));
+//    	System.out.println(jedis.exists(&quot;name&quot;,&quot;name0&quot;,&quot;name1&quot;,&quot;name2&quot;,&quot;name3&quot;));
+//    	System.out.println(jedis.keys(&quot;*&quot;));
+//    	System.out.println(jedis.type(&quot;name1&quot;));
+//    	System.out.println(jedis.randomKey());
+//    	System.out.println(jedis.flushDB());
+//    	System.out.println(jedis.get(&quot;name1&quot;));
+//    	System.out.println(jedis.flushAll());
+//    	System.out.println(jedis.randomKey());
+    	
+    	/****2.哈希(Hash)******/
+    	/*
+    	HashMap&lt;String,String&gt; hmap = new HashMap&lt;String,String&gt;();
+    	hmap.put(&quot;name5&quot;, &quot;eee&quot;);
+    	hmap.put(&quot;name4&quot;, &quot;ddd&quot;);
+    	hmap.put(&quot;id&quot;, &quot;666&quot;);
+    	// 设置值
+    	jedis.hset(&quot;user&quot;, &quot;name6&quot;, &quot;fff&quot;);
+    	jedis.hmset(&quot;user&quot;, hmap);
+    	// 取值
+    	System.out.println(&quot;hget:\t&quot; + jedis.hget(&quot;user&quot;, &quot;name4&quot;));
+    	System.out.println(&quot;hmget:\t&quot; + jedis.hmget(&quot;user&quot;, &quot;name4&quot;,&quot;name5&quot;,&quot;name6&quot;));
+    	System.out.println(&quot;hgetAll:\t&quot; + jedis.hgetAll(&quot;user&quot;));
+    	System.out.println(&quot;keys:\t&quot; + jedis.keys(&quot;*&quot;));
+    	System.out.println(&quot;hkeys:\t&quot; + jedis.hkeys(&quot;user&quot;));
+    	System.out.println(&quot;hvals:\t&quot; + jedis.hvals(&quot;user&quot;));
+    	System.out.println(&quot;hlen:\t&quot; + jedis.hlen(&quot;user&quot;));
+    	// 删除field
+    	System.out.println(&quot;hdel\t&quot; + jedis.hdel(&quot;user&quot;,&quot;name4&quot;));
+    	System.out.println(&quot;hdel\t&quot; + jedis.hdel(&quot;user&quot;,&quot;name5&quot;,&quot;name6&quot;));
+    	System.out.println(jedis.hgetAll(&quot;user&quot;));
+    	// 清空
+    	System.out.println(jedis.flushAll());
+    	System.out.println(jedis.hgetAll(&quot;user&quot;));
+    	*/
+
+    	
+    	/*******3.列表List(类似于栈???)*********/
+    	/*
+    	// 放值
+    	jedis.lpushx(&quot;list&quot;, &quot;999&quot;);
+    	jedis.lpush(&quot;list&quot;, &quot;hhh&quot;,&quot;ggg&quot;,&quot;iii&quot;);		//1或多到  开始
+    	jedis.rpush(&quot;list&quot;, &quot;kkk&quot;,&quot;jjj&quot;);			//1或多到  末尾
+    	jedis.lpushx(&quot;list&quot;, &quot;666&quot;);				// 插入已存在列表头部
+    	// 取值
+    	System.out.println(jedis.lrange(&quot;list&quot;, 0, 10));	//获取指定范围元素
+    	System.out.println(jedis.blpop(&quot;list&quot;,&quot;5&quot;));		//移出 第一个元素 等待超时
+    	System.out.println(jedis.brpop(&quot;list&quot;, &quot;5&quot;));		//移出 最后一个元素 等待超时
+    	System.out.println(jedis.lindex(&quot;list&quot;, 3));		//索引获取元素
+    	System.out.println(jedis.llen(&quot;list&quot;));				//获取列表长度
+    	System.out.println(jedis.lrange(&quot;list&quot;, 0, 10));
+    	//清空
+    	System.out.println(jedis.flushAll());
+    	*/
+    	
+    	
+    	/********4.集合(Set)****************/
+    	/*
+    	// 放值
+    	jedis.sadd(&quot;set&quot;, &quot;lll&quot;, &quot;nnn&quot;, &quot;mmm&quot; ,&quot;ooo&quot;);
+    	// 取值
+    	System.out.println(jedis.smembers(&quot;set&quot;));		// 所有元素
+    	System.out.println(jedis.sismember(&quot;set&quot;, &quot;ooo&quot;));			// key(value)是否存在
+    	System.out.println(jedis.sismember(&quot;sett&quot;, &quot;ooo&quot;));
+    	System.out.println(jedis.srem(&quot;set&quot;,&quot;ooo&quot;,&quot;mmm&quot;));		// 移除
+    	System.out.println(jedis.smembers(&quot;set&quot;));
+    	// 运算
+    	jedis.sadd(&quot;set&quot;, &quot;set&quot;);
+    	jedis.sadd(&quot;sett&quot;, &quot;lll&quot;, &quot;nnn&quot;, &quot;mmm&quot;, &quot;ooo&quot;, &quot;sett&quot;);
+    	System.out.println(jedis.sinter(&quot;set&quot;, &quot;sett&quot;));		// 交集
+    	System.out.println(jedis.sdiff(&quot;set&quot;, &quot;sett&quot;));			// 差集
+    	System.out.println(jedis.sunion(&quot;set&quot;, &quot;sett&quot;));		// 并集
+    	
+    	System.out.println(jedis.scard(&quot;set&quot;));		// 元素数目
+    	System.out.println(jedis.scard(&quot;sett&quot;));		// 元素数目
+    	//清空
+    	System.out.println(jedis.flushAll());
+    	*/
+    	
+    	/********5.有序集合sorted set(zset)*************/
+    	HashMap&lt;String,Double&gt; scoremap = new HashMap&lt;String, Double&gt;(); 
+    	scoremap.put(&quot;vvv&quot;, 0.22);
+    	scoremap.put(&quot;ppp&quot;, 0.16);
+    	scoremap.put(&quot;sss&quot;, 0.19);
+    	scoremap.put(&quot;qqq&quot;, 0.17);
+    	scoremap.put(&quot;www&quot;, 0.23);
+    	scoremap.put(&quot;rrr&quot;, 0.18);
+    	scoremap.put(&quot;uuu&quot;, 0.21);
+    	scoremap.put(&quot;ttt&quot;, 0.20);
+    	// 放值
+    	jedis.zadd(&quot;zset&quot;, scoremap);		// 添加元素或更新分数
+    	jedis.zadd(&quot;zset&quot;, 0.24, &quot;xxx&quot;);
+    	// 元素查找修改
+    	System.out.println(jedis.zrange(&quot;zset&quot;, 0, 10));		// 根据索引返回区间
+    	System.out.println(jedis.zcount(&quot;zset&quot;, 0.18, 0.21));		// 根据分数返回元素数
+    	System.out.println(jedis.zrem(&quot;zset&quot;, &quot;sss&quot;, &quot;ppp&quot;));		// 移除元素
+    	System.out.println(jedis.zcard(&quot;zset&quot;));					// 元素数目
+    	System.out.println(jedis.zincrby(&quot;zset&quot;, 1, &quot;www&quot;));		// 分数增量
+    	System.out.println(jedis.zscore(&quot;zset&quot;, &quot;www&quot;));		// 返回分数值
+    	System.out.println(jedis.zrank(&quot;zset&quot;, &quot;www&quot;));		// 返回元素索引
+    	System.out.println(jedis.zrangeByScore(&quot;zset&quot;, 0, 2));		// 根据分数返回元素区间
+    	//清空
+    	System.out.println(jedis.flushAll());
+    	
+    	
+        jedis.close();
+    }
+}
+</code></pre></div></div></div> <div class="page-slot page-slot-bottom">
+  <div class="wwads-cn wwads-horizontal pageB" data-id="136" style="width:100%;max-height:80px;min-height:auto;"></div>
+  <style>
+    .pageB img{width:80px!important;}
+    .wwads-horizontal .wwads-text, .wwads-content .wwads-text{line-height:1;}
+  </style>
+  </div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/user-h/hdata-doc/edit/master/docs/03.数据库/09.Redis/01.Redis命令学习.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/04/13, 21:51:31</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/hdata-doc/pages/e461e3/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">华为高斯数据库</div></a> <a href="/hdata-doc/pages/265b1a/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">Excel技巧</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/hdata-doc/pages/e461e3/" class="prev">华为高斯数据库</a></span> <span class="next"><a href="/hdata-doc/pages/265b1a/">Excel技巧</a>→
+      </span></p></div></div></div> <!----></main></div> <div class="footer"><div class="icons"><a href="mailto:1033078928@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/user-h" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://gitee.com/aihb" title="Gitee" target="_blank" class="iconfont icon-gitee"></a><a href="https://music.163.com" title="听音乐" target="_blank" class="iconfont icon-erji"></a><a href="https://bilibili.com" title="哔哩哔哩" target="_blank" class="iconfont icon-bilibili"></a><a href="https://douyin.com/" title="抖音" target="_blank" class="iconfont icon-douyin"></a><a href="" title="猫咪" target="_blank" class="iconfont icon-mao"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2025
+    <span>Ai | MIT License</span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div>
+    <div class="wwads-cn wwads-vertical windowRB" data-id="136" style="max-width:160px;
+    min-width: auto;min-height:auto;"></div>
+    <style>
+      .windowRB{ padding: 0;}
+      .windowRB .wwads-img{margin-top: 10px;}
+      .windowRB .wwads-content{margin: 0 10px 10px 10px;}
+      .custom-html-window-rb .close-but{
+        display: none;
+      }
+    </style>
+  </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/hdata-doc/assets/js/app.37e4fbb6.js" defer></script><script src="/hdata-doc/assets/js/2.82afd9cb.js" defer></script><script src="/hdata-doc/assets/js/60.2afcb1b9.js" defer></script>
+  </body>
+</html>

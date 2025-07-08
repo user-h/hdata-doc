@@ -1,0 +1,53 @@
+[](https://www.aliyundrive.com/s/DR98xUgfD44)
+
+```markmap
+# Root
+
+## Java
+
+### 基础
+### 工具
+
+- [Hutool](https://www.hutool.cn/)
+- <em>Apache Commons<em>
+
+### 框架
+
+## 大数据
+
+### Hadoop
+### Zookeeper
+### Hive
+### Kafka
+### Hbase
+### Spark
+### Flink
+### Flume
+### Sqoop
+### 调度
+### 其他
+
+## 数据库
+
+### Oracle
+### Mysql
+### Redis
+
+## 其他
+
+### Python
+### Shell
+### Scala
+### 正则表达式
+### 前端
+```
+
+```
+图床：https://sm.ms/   https://postimages.org
+```
+
+升级包
+```
+yarn upgrade-interactive --latest
+// 需要手动选择升级的依赖包，按空格键选择，a 键切换所有，i 键反选选择
+```
